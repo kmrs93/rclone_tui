@@ -1,0 +1,2 @@
+# For Windows support (not needed on Linux/macOS, harmless otherwise)
+windows-curses; platform_system=="Windows"

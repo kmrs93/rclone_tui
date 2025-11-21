@@ -1,0 +1,9 @@
+```gitignore
+__pycache__/
+*.pyc
+*.pyo
+.env/
+dist/
+build/
+*.log
+*.spec

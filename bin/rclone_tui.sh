@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Resolve repo root
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+# Hardcode repo root to your project path
+REPO_ROOT="/home/kmrs93/projects/rclone-tui"
 
 # Re-exec with sudo if not root
 if [ "${EUID:-$(id -u)}" -ne 0 ]; then
   exec sudo "$0" "$@"
 fi
 
-# Use venv if present; else system python
+# Use venv python if present; else system python
 VENV="${REPO_ROOT}/.env"
 if [ -x "${VENV}/bin/python" ]; then
   PY="${VENV}/bin/python"
